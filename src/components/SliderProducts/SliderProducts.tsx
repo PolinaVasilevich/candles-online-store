@@ -9,6 +9,7 @@ interface SliderProductsProps {
 
 const SliderProducts: FC<SliderProductsProps> = (props) => {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderContrainerRef = useRef<HTMLDivElement>(null);
   const [carouselWidth, setCarouselWidth] = useState(0);
   let step = 0;
 
@@ -20,16 +21,18 @@ const SliderProducts: FC<SliderProductsProps> = (props) => {
 
   const nextSlider = () => {
     step++;
-    if (sliderRef.current) {
+    if (sliderContrainerRef.current) {
       console.log(carouselWidth * step);
-      sliderRef.current.style.transform = `translateX(-${1080}px)`;
+      sliderContrainerRef.current.style.transform = `translateX(-${
+        carouselWidth * step
+      }px)`;
     }
   };
 
   const prevSlider = () => {
     step--;
-    if (sliderRef.current) {
-      sliderRef.current.style.transform = `translateX(-${
+    if (sliderContrainerRef.current) {
+      sliderContrainerRef.current.style.transform = `translateX(-${
         carouselWidth * step
       }px)`;
     }
@@ -38,7 +41,7 @@ const SliderProducts: FC<SliderProductsProps> = (props) => {
   return (
     <div className="slider-products">
       <div className="slider-products__inner">
-        <div className="slider-products__content">
+        <div className="slider-products__content" ref={sliderContrainerRef}>
           {props.products.map((product, index) => (
             <div className="slider" key={index} ref={sliderRef}>
               <ProductSaleCard product={product} />
