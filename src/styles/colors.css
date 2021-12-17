@@ -1,0 +1,11 @@
+:root {
+  --dark: #333;
+  --white: #fff;
+  --light-orange: #fef0de;
+  --red-yellow: #fde5ce;
+  --grey: #ebe9e4;
+  --red-yellow-translucency: rgba(253, 229, 206, 0.5);
+  --light-yellow: #fef0de;
+
+  --main-front: #a19789;
+}
