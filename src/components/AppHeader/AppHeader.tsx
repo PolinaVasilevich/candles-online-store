@@ -48,9 +48,9 @@ const AppHeader: FC = () => {
           ))}
         </ul>
       </nav>
-      <div>
+      <Link to={RouteNames.BAG}>
         <IoBasketOutline />
-      </div>
+      </Link>
     </header>
   );
 };

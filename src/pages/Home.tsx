@@ -14,11 +14,11 @@ import slider7 from "../assets/slider-7.jpg";
 import slider8 from "../assets/slider-8.jpg";
 
 import Banner from "../components/Banner/Banner";
-import ProductCard from "../components/ProductCard/ProductCard";
+
 import ProductInfoCard from "../components/ProductInfoCard/ProductInfoCard";
 import Title from "../components/Title/Title";
 import Container from "../components/Container/Container";
-import ProductSaleCard from "../components/ProductSaleCard/ProductCard";
+
 import SliderProducts from "../components/SliderProducts/SliderProducts";
 
 const Home: FC = () => {
