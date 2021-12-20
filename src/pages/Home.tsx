@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Gallery from "../components/Gallery/Gallery";
 import Slider from "../components/Slider/Slider";
 
-import banner from "../assets/banner.png";
+import banner from "../assets/banner.jpg";
 
 import slider1 from "../assets/slider-1.jpg";
 import slider2 from "../assets/slider-2.jpg";
@@ -22,7 +22,7 @@ import ProductSaleCard from "../components/ProductSaleCard/ProductCard";
 import SliderProducts from "../components/SliderProducts/SliderProducts";
 
 const Home: FC = () => {
-  const imgs = [slider1, slider2, slider3];
+  const imgs = [slider1, slider2, slider3, slider1, slider2, slider3];
 
   const products = [
     {
@@ -56,6 +56,44 @@ const Home: FC = () => {
       color: "white",
       price: 24,
     },
+    {
+      img: slider6,
+      name: "appalechia",
+      color: "calm",
+      price: 24,
+    },
+    {
+      img: slider7,
+      name: "pine forest",
+      color: "calm",
+      price: 24,
+    },
+    {
+      img: slider8,
+      name: "snowy morning",
+      color: "white",
+      price: 24,
+    },
+
+    {
+      img: slider6,
+      name: "appalechia",
+      color: "calm",
+      price: 24,
+    },
+    {
+      img: slider7,
+      name: "pine forest",
+      color: "calm",
+      price: 24,
+    },
+    {
+      img: slider8,
+      name: "snowy morning",
+      color: "white",
+      price: 24,
+    },
+
     {
       img: slider6,
       name: "appalechia",

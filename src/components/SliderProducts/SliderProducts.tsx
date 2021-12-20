@@ -8,53 +8,81 @@ interface SliderProductsProps {
 }
 
 const SliderProducts: FC<SliderProductsProps> = (props) => {
+  const carouselRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
-  const sliderContrainerRef = useRef<HTMLDivElement>(null);
+
   const [carouselWidth, setCarouselWidth] = useState(0);
-  let step = 0;
+
+  const [sliderIndex, setSliderIndex] = useState(0);
+
+  const [isDisabledNextButton, setIsDisabledNextButton] = useState(false);
 
   useEffect(() => {
-    if (sliderRef.current) {
-      setCarouselWidth(sliderRef.current.offsetWidth);
-    }
+    const updateCarouselWidth = () => {
+      setCarouselWidth(carouselRef.current?.offsetWidth ?? 0);
+    };
+    const onResize = () => {
+      updateCarouselWidth();
+    };
+
+    window.addEventListener("resize", onResize);
+    updateCarouselWidth();
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   const nextSlider = () => {
-    step++;
-    if (sliderContrainerRef.current) {
-      console.log(carouselWidth * step);
-      sliderContrainerRef.current.style.transform = `translateX(-${
-        carouselWidth * step
+    const newSliderIndex = sliderIndex + 1;
+
+    if (sliderRef.current) {
+      sliderRef.current.style.transform = `translateX(-${
+        (carouselWidth + 27) * newSliderIndex
       }px)`;
+      setSliderIndex(newSliderIndex);
+
+      if (
+        sliderRef.current.offsetWidth - newSliderIndex * carouselWidth <
+        carouselWidth
+      )
+        setIsDisabledNextButton(true);
     }
   };
 
   const prevSlider = () => {
-    step--;
-    if (sliderContrainerRef.current) {
-      sliderContrainerRef.current.style.transform = `translateX(-${
-        carouselWidth * step
+    setIsDisabledNextButton(false);
+    const newSliderIndex = sliderIndex - 1;
+
+    if (sliderRef.current) {
+      sliderRef.current.style.transform = `translateX(-${
+        (carouselWidth + 27) * newSliderIndex
       }px)`;
+      setSliderIndex(newSliderIndex);
     }
   };
 
   return (
     <div className="slider-products">
-      <div className="slider-products__inner">
-        <div className="slider-products__content" ref={sliderContrainerRef}>
+      <div className="slider-products__wrapper" ref={carouselRef}>
+        <div className="slider-products__content" ref={sliderRef}>
           {props.products.map((product, index) => (
-            <div className="slider" key={index} ref={sliderRef}>
+            <div className="slider" key={index}>
               <ProductSaleCard product={product} />
             </div>
           ))}
         </div>
       </div>
       <div className="slider-products__btns">
-        <button onClick={prevSlider}>
-          <IoArrowBack />
+        <button onClick={prevSlider} disabled={sliderIndex === 0}>
+          <IoArrowBack
+            style={sliderIndex === 0 ? { color: "var(--main-front)" } : {}}
+          />
         </button>
-        <button onClick={nextSlider}>
-          <IoArrowForward />
+        <button onClick={nextSlider} disabled={isDisabledNextButton}>
+          <IoArrowForward
+            style={isDisabledNextButton ? { color: "var(--main-front)" } : {}}
+          />
         </button>
       </div>
     </div>

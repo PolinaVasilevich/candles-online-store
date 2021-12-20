@@ -44,11 +44,22 @@ const Slider: FC<SliderProps> = (props) => {
             img={img}
           />
           <div className="slider__btns">
-            <button onClick={prevSlider}>
-              <IoIosArrowRoundUp />
+            <button onClick={prevSlider} disabled={sliderIndex === 1}>
+              <IoIosArrowRoundUp
+                style={sliderIndex === 1 ? { color: "var(--main-front)" } : {}}
+              />
             </button>
-            <button onClick={nextSlider}>
-              <IoIosArrowRoundDown />
+            <button
+              onClick={nextSlider}
+              disabled={sliderIndex === props.images.length}
+            >
+              <IoIosArrowRoundDown
+                style={
+                  sliderIndex === props.images.length
+                    ? { color: "var(--main-front)" }
+                    : {}
+                }
+              />
             </button>
           </div>
         </div>
