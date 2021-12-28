@@ -1,4 +1,6 @@
 :root {
+  --ff-base: "NTR", sans-serif;
+
   --dark: #333;
   --white: #fff;
   --light-orange: #fef0de;
@@ -8,4 +10,9 @@
   --light-yellow: #fef0de;
 
   --main-front: #a19789;
+
+  --clr-base-font: #1e130b;
+
+  --clr-bgr-header: #fef0de;
+  --clr-bgr-footer: #fde5ce;
 }

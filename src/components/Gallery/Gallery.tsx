@@ -2,11 +2,12 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { RouteNames } from "../../router";
+import { IImage } from "../../types/types";
 import MainButton from "../MainButton/MainButton";
 import Title from "../Title/Title";
 
 interface GalleryProps {
-  images: string[];
+  images: IImage[];
 }
 
 const Gallery: FC<GalleryProps> = (props) => {
@@ -16,7 +17,7 @@ const Gallery: FC<GalleryProps> = (props) => {
       <div className="gallery__wrapper">
         {props.images.map((image, index) => (
           <img
-            src={image}
+            src={image.img}
             key={index}
             className="gallery__image"
             alt="candle"

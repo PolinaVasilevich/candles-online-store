@@ -1,15 +1,12 @@
 import React, { FC } from "react";
+import { IOrder } from "../../models/IOrder";
 
 interface OrderCardProps {
-  img: string;
-  name: string;
-  color: string;
-  price: number;
-  count: number;
+  order: IOrder;
 }
 
 const OrderCard: FC<OrderCardProps> = (props) => {
-  const { img, name, color, price, count } = props;
+  const { img, name, color, price, count } = props.order;
   return (
     <div className="order-card">
       <div className="order-card__info">

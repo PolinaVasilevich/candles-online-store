@@ -18,7 +18,7 @@ const ProductSaleCard: FC<ProductSaleCardProps> = (props) => {
   return (
     <div className="product-sale">
       <img src={img} alt={name} />
-      <div>
+      <div className="product-sale__text-container">
         <h3 className="product-sale__title">{name}</h3>
         <span className="product-sale__color">{color}</span>
       </div>

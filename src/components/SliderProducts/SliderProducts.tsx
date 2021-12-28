@@ -1,7 +1,9 @@
 import React, { FC, useEffect, useMemo, useRef, useState } from "react";
 
-import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import ProductSaleCard, { IProduct } from "../ProductSaleCard/ProductCard";
+
+import arrowRight from "../../assets/arrows/arrowRight.png";
+import arrowLeft from "../../assets/arrows/arrowLeft.png";
 
 interface SliderProductsProps {
   products: IProduct[];
@@ -67,7 +69,7 @@ const SliderProducts: FC<SliderProductsProps> = (props) => {
       <div className="slider-products__wrapper" ref={carouselRef}>
         <div className="slider-products__content" ref={sliderRef}>
           {props.products.map((product, index) => (
-            <div className="slider" key={index}>
+            <div className="slider-product" key={index}>
               <ProductSaleCard product={product} />
             </div>
           ))}
@@ -75,12 +77,16 @@ const SliderProducts: FC<SliderProductsProps> = (props) => {
       </div>
       <div className="slider-products__btns">
         <button onClick={prevSlider} disabled={sliderIndex === 0}>
-          <IoArrowBack
+          <img
+            src={arrowLeft}
+            alt="arrow left"
             style={sliderIndex === 0 ? { color: "var(--main-front)" } : {}}
           />
         </button>
         <button onClick={nextSlider} disabled={isDisabledNextButton}>
-          <IoArrowForward
+          <img
+            src={arrowRight}
+            alt="arrow right"
             style={isDisabledNextButton ? { color: "var(--main-front)" } : {}}
           />
         </button>

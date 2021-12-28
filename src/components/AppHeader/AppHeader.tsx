@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import { RouteNames } from "../../router";
 import { IoBasketOutline } from "react-icons/io5";
 import logo from "../../assets/logo.png";
+import bag from "../../assets/icons/bag.png";
 
-const AppHeader: FC = () => {
+interface IAppHeaderProps {
+  backgroundColor?: string;
+}
+
+const AppHeader: FC<IAppHeaderProps> = (props) => {
   interface IHeader {
     path: string;
     label: string;
@@ -33,7 +38,12 @@ const AppHeader: FC = () => {
   ];
 
   return (
-    <header className="header">
+    <header
+      className="header"
+      style={{
+        backgroundColor: props.backgroundColor ? props.backgroundColor : "",
+      }}
+    >
       <div>
         <Link to={RouteNames.HOME}>
           <img src={logo} alt="logo" className="header__logo" />
@@ -49,7 +59,7 @@ const AppHeader: FC = () => {
         </ul>
       </nav>
       <Link to={RouteNames.BAG}>
-        <IoBasketOutline />
+        <img src={bag} alt="bag" />
       </Link>
     </header>
   );
