@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 const App: FC = () => {
   return (
     <div>
-      <AppHeader />
+      <AppHeader backgroundColor="var(--clr-bgr-header)" />
       <main>
         <AppRouter />
       </main>

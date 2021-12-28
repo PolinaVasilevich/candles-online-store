@@ -5,9 +5,7 @@ interface TitleProps {
 }
 
 const Title: FC<TitleProps> = (props) => {
-  return (
-    <h1 style={{ marginBottom: "2rem" }}>{props.children.toUpperCase()}</h1>
-  );
+  return <h1 className="title">{props.children.toUpperCase()}</h1>;
 };
 
 export default Title;

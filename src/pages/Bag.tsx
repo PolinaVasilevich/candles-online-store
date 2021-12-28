@@ -7,32 +7,36 @@ import slider2 from "../assets/slider-2.jpg";
 import slider3 from "../assets/slider-3.jpg";
 import MainButton from "../components/MainButton/MainButton";
 
+import { useTypedSelector } from "../hooks/useTypedSelector";
+
 const Bag: FC = () => {
-  const orders = [
-    {
-      img: slider1,
-      name: "name",
-      color: "white",
-      price: 20,
-      count: 3,
-    },
+  //   const orders = [
+  //     {
+  //       img: slider1,
+  //       name: "name",
+  //       color: "white",
+  //       price: 20,
+  //       count: 3,
+  //     },
 
-    {
-      img: slider2,
-      name: "name",
-      color: "white",
-      price: 20,
-      count: 1,
-    },
+  //     {
+  //       img: slider2,
+  //       name: "name",
+  //       color: "white",
+  //       price: 20,
+  //       count: 1,
+  //     },
 
-    {
-      img: slider3,
-      name: "name",
-      color: "white",
-      price: 20,
-      count: 2,
-    },
-  ];
+  //     {
+  //       img: slider3,
+  //       name: "name",
+  //       color: "white",
+  //       price: 20,
+  //       count: 2,
+  //     },
+  //   ];
+
+  const { orders } = useTypedSelector((state) => state.order);
 
   return (
     <div className="main-wrapper">
@@ -45,13 +49,13 @@ const Bag: FC = () => {
         <div className="order-info">
           <div className="order-info__content">
             <h2>{"order information".toLocaleUpperCase()}</h2>
-            <li>
+            <ul>
               {orders.map((order) => (
                 <li key={order.name}>
-                  <OrderCard {...order} />
+                  <OrderCard order={order} />
                 </li>
               ))}
-            </li>
+            </ul>
           </div>
 
           <div className="order-info__wrapper">

@@ -14,12 +14,9 @@ const Banner: FC<BannerProps> = (props) => {
     >
       <ProductInfoCard
         title="Newest Collection SOFT"
-        text="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
+        text="Expolre a new world of soft aromas from our collection SOFT filled with cotton, sea salt, mint and leaves. Relax with the help of candles that will create the best atmosphere in your house"
         colorCard="var(--red-yellow-translucency)"
-        widthBlock="40%"
+        widthBlock="49%"
       />
     </div>
   );

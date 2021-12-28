@@ -1,7 +1,7 @@
 @import "./styles/colors.css";
 @import "./components/Gallery/GalleryStyles.scss";
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
 * {
   margin: 0;
@@ -14,29 +14,24 @@ html {
 }
 
 body {
-  max-width: 1280px;
+  max-width: 1510px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   height: 100%;
 
-  color: var(--dark);
+  color: var(--clr-base-font);
 
-  font-family: "Nunito Sans", sans-serif;
-
-  // background-color: var(--red-yellow);
-}
-
-main {
-  // height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
 
 .main-wrapper {
-  padding: 2rem 6rem;
+  padding: 2rem 17rem;
 }
 
 .footer {
   flex: 0 0 auto;
+  background-color: var(--clr-bgr-footer);
 }
 
 .header {
@@ -45,8 +40,7 @@ main {
   justify-content: space-between;
 
   color: var(--dark);
-  // background-color: var(--light-orange);
-  padding: 2rem 7rem;
+  padding: 2.2rem 16.3rem;
 
   li {
     list-style: none;
@@ -54,9 +48,16 @@ main {
 
   a {
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 2.2rem;
+    font-weight: normal;
 
     color: var(--dark);
+
+    margin-right: 2rem;
+
+    img {
+      vertical-align: middle;
+    }
   }
 
   svg {
@@ -65,8 +66,8 @@ main {
   }
 
   &__logo {
-    width: 100px;
-    height: 100px;
+    width: 155px;
+    height: 155px;
     object-fit: contain;
   }
 
@@ -170,8 +171,8 @@ main {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 450px;
-  padding: 0 6rem;
+  height: 600px;
+  padding: 0 16.7rem;
 }
 
 .product-info {
@@ -184,16 +185,17 @@ main {
   padding: 0 2rem;
 
   &__text {
-    width: 70%;
+    width: 75%;
 
     h1 {
       text-align: center;
       margin-bottom: 1rem;
-      font-size: 1.6rem;
+      font-size: 3rem;
     }
 
     p {
       margin-bottom: 3.4rem;
+      font-size: 2rem;
     }
   }
 
@@ -203,9 +205,8 @@ main {
 }
 
 .main-button {
-  padding: 0.7rem 1.5rem;
-  // border-top: 2px solid var(--white);
-  // border-bottom: 2px solid var(--white);
+  padding: 2rem 7.45rem;
+
   height: 100%;
 
   border-top: 2px solid var(--dark);
@@ -264,8 +265,10 @@ main {
 
     text-transform: uppercase;
 
-    font-size: 1.3rem;
+    font-size: 2rem;
     cursor: pointer;
+
+    color: var(--clr-base-font);
   }
 }
 
@@ -273,7 +276,7 @@ main {
   width: 100%;
   // height: 100%;
   display: grid;
-  grid-template-columns: 46.4% 54%;
+  grid-template-columns: 43.4% 58%;
 
   &__img {
     height: 450px;
@@ -290,7 +293,7 @@ main {
   width: 100%;
 
   display: grid;
-  grid-template-columns: 43% 57%;
+  grid-template-columns: 40% 60%;
   height: 450px;
   overflow: hidden;
 
@@ -308,11 +311,15 @@ main {
 }
 
 .product-sale {
-  width: 100%;
+  width: 270px;
+
+  &__text-container {
+    margin-bottom: 5rem;
+  }
 
   img {
     width: 100%;
-    // height: 100%;
+    height: 320px;
     object-fit: cover;
   }
 
@@ -325,13 +332,16 @@ main {
   }
 
   &__prise {
-    margin: 2rem 0;
-    font-size: 1.6rem;
+    font-size: 2.1rem;
+    font-weight: bold;
+
+    margin-bottom: 4.5rem;
   }
 }
 
 .footer {
-  padding: 1.3rem 0;
+  margin-top: 9rem;
+  padding: 5.3rem 0;
   svg {
     font-size: 2.3rem;
     margin-left: 1.2rem;
@@ -341,6 +351,15 @@ main {
   &__icons {
     display: flex;
     justify-content: center;
+
+    img {
+      width: 70px;
+      height: 70px;
+
+      margin-left: 5rem;
+
+      cursor: pointer;
+    }
   }
 }
 
@@ -349,9 +368,9 @@ main {
   justify-content: space-between;
   align-items: center;
 
-  padding: 0.7rem;
+  padding: 1rem;
 
-  border: 1px solid var(--dark);
+  border: 2px solid var(--dark);
 
   &__input {
     display: flex;
@@ -374,11 +393,11 @@ main {
     &::after {
       content: "";
       display: block;
-      height: 3.2rem;
-      border-left: 1px solid var(--dark);
+      height: 6rem;
+      border-left: 2px solid var(--dark);
       position: absolute;
-      top: -0.7rem;
-      left: -0.7rem;
+      top: -1.7rem;
+      left: -2rem;
     }
   }
 
@@ -388,7 +407,7 @@ main {
 
     width: 50%;
 
-    font-size: 1.5rem;
+    font-size: 2.4rem;
 
     text-align: center;
   }
@@ -415,12 +434,14 @@ main {
   &__content {
     display: inline-flex;
     transition: transform 0.5s;
-    column-gap: 2rem;
+    justify-content: space-between;
+
+    width: 100%;
 
     .slider {
       flex-shrink: 0;
-      width: 247px;
-      height: 100%;
+      width: 270px;
+      // height: 320px;
     }
   }
 
@@ -535,4 +556,29 @@ main {
       }
     }
   }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 59px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #1e130b;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  -webkit-text-fill-color: white;
+
+  margin-bottom: 4rem;
+}
+
+.arrow-top {
+  transform: rotate(270deg);
+}
+
+.arrow-bottom {
+  transform: rotate(90deg);
 }

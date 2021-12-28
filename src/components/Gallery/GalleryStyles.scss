@@ -1,11 +1,9 @@
 .gallery {
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 150px);
-    grid-gap: 15px;
-
-    // height: 350px;
+    grid-template-columns: repeat(6, 170px);
+    grid-template-rows: repeat(2, 178px);
+    grid-gap: 2.7rem;
   }
 
   a {
