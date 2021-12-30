@@ -24,7 +24,7 @@ const Gallery: FC<GalleryProps> = (props) => {
           />
         ))}
         <Link to={RouteNames.ABOUT}>
-          <MainButton title="about us" />
+          <MainButton title="about us" classNames="main-button-orange" />
         </Link>
       </div>
     </div>

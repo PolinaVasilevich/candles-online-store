@@ -2,6 +2,8 @@ import React, { FC, useState } from "react";
 
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
+import arrow from "../../assets/arrows/smlArrow.png";
+
 const CoutProduct: FC = () => {
   const [count, setCount] = useState(1);
 
@@ -25,8 +27,12 @@ const CoutProduct: FC = () => {
   return (
     <div className="count-product">
       <div className="count-product__input">
-        <button onClick={minusProduct}>
-          <IoChevronBack />
+        <button onClick={minusProduct} disabled={count === 1}>
+          <img
+            src={arrow}
+            alt="arrow left"
+            className={count === 1 ? "disabled" : ""}
+          />
         </button>
         <input
           value={count}
@@ -36,7 +42,7 @@ const CoutProduct: FC = () => {
           onKeyUp={(e) => keyup(e)}
         />
         <button onClick={plusProduct}>
-          <IoChevronForward />
+          <img src={arrow} alt="arrow left" className="arrow-left" />
         </button>
       </div>
       <button className="count-product__button-add">Add</button>

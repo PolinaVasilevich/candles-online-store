@@ -1,18 +1,22 @@
 :root {
-  --ff-base: "NTR", sans-serif;
+  --fs-m: 18px;
+  --fs-l: 24px;
+  --fs-lx: 36px;
 
-  --dark: #333;
-  --white: #fff;
-  --light-orange: #fef0de;
-  --red-yellow: #fde5ce;
-  --grey: #ebe9e4;
-  --red-yellow-translucency: rgba(253, 229, 206, 0.5);
-  --light-yellow: #fef0de;
-
-  --main-front: #a19789;
+  --fw-bold: 500;
+  --fw-normal: 300;
 
   --clr-base-font: #1e130b;
 
   --clr-bgr-header: #fef0de;
   --clr-bgr-footer: #fde5ce;
+  --clr-bgr-grey: #ebe9e4;
+
+  --clr-white: #fff;
+  --clr-orange: #fac9ac;
+
+  --clr-dark: #8b8883;
+  --clr-btn-text-brown: #b36d56;
+  --clr-text-grey: #8b8883;
+  --clr-text-black: #1e130b;
 }
