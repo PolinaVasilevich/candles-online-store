@@ -2,8 +2,7 @@ import React, { FC, useEffect, useMemo, useRef, useState } from "react";
 
 import ProductSaleCard, { IProduct } from "../ProductSaleCard/ProductCard";
 
-import arrowRight from "../../assets/arrows/arrowRight.png";
-import arrowLeft from "../../assets/arrows/arrowLeft.png";
+import arrowIconRight from "../../assets/arrows/arrowIconRight.png";
 
 interface SliderProductsProps {
   products: IProduct[];
@@ -77,18 +76,20 @@ const SliderProducts: FC<SliderProductsProps> = (props) => {
       </div>
       <div className="slider-products__btns">
         <button onClick={prevSlider} disabled={sliderIndex === 0}>
-          <img
-            src={arrowLeft}
-            alt="arrow left"
-            style={sliderIndex === 0 ? { color: "var(--main-front)" } : {}}
-          />
+          <div
+            style={{ backgroundImage: `url(${arrowIconRight})` }}
+            className={`arrow-product-slider arrow-left ${
+              sliderIndex === 0 ? "disabled" : ""
+            }`}
+          ></div>
         </button>
         <button onClick={nextSlider} disabled={isDisabledNextButton}>
-          <img
-            src={arrowRight}
-            alt="arrow right"
-            style={isDisabledNextButton ? { color: "var(--main-front)" } : {}}
-          />
+          <div
+            style={{ backgroundImage: `url(${arrowIconRight})` }}
+            className={`arrow-product-slider ${
+              isDisabledNextButton ? "disabled" : ""
+            }`}
+          ></div>
         </button>
       </div>
     </div>

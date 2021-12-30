@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RouteNames } from "../../router";
-import { IoBasketOutline } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import bag from "../../assets/icons/bag.png";
+import bagIcon from "../../assets/icons/bag-icons.png";
 
 interface IAppHeaderProps {
   backgroundColor?: string;
@@ -49,17 +49,20 @@ const AppHeader: FC<IAppHeaderProps> = (props) => {
           <img src={logo} alt="logo" className="header__logo" />
         </Link>
       </div>
-      <nav>
+      <nav className="header__links">
         <ul className="header__nav nav">
           {headers.map((header) => (
             <li key={header.path} className="nav__item">
-              <Link to={header.path}>{header.label}</Link>
+              <NavLink to={header.path}>{header.label}</NavLink>
             </li>
           ))}
         </ul>
       </nav>
       <Link to={RouteNames.BAG}>
-        <img src={bag} alt="bag" />
+        <div
+          className="header__icon"
+          style={{ backgroundImage: `url(${bagIcon})` }}
+        ></div>
       </Link>
     </header>
   );

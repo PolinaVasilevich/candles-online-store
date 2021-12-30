@@ -15,7 +15,7 @@ const Banner: FC<BannerProps> = (props) => {
       <ProductInfoCard
         title="Newest Collection SOFT"
         text="Expolre a new world of soft aromas from our collection SOFT filled with cotton, sea salt, mint and leaves. Relax with the help of candles that will create the best atmosphere in your house"
-        colorCard="var(--red-yellow-translucency)"
+        colorCard="var(--clr-bgr-footer)"
         widthBlock="49%"
       />
     </div>

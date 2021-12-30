@@ -19,13 +19,13 @@ const Home: FC = () => {
   return (
     <div>
       <Banner backgroundImage={banner} />
-      <div style={{ margin: "3rem 0" }} className="main-wrapper">
+      <div className="main-wrapper">
         <Title>Our collections</Title>
         <Container>
           <ProductInfoCard
             title="Newest Collection SOFT"
             text="Expolre a new world of soft aromas from our collection SOFT filled with cotton, sea salt, mint and leaves. Relax with the help of candles that will create the best atmosphere in your house"
-            colorCard="var(--grey)"
+            colorCard="var(--clr-bgr-grey)"
           />
           <img src={img} alt="img" />
         </Container>
@@ -36,7 +36,7 @@ const Home: FC = () => {
         <SliderProducts products={popularProducts} />
       </div>
 
-      <div className="main-wrapper">
+      <div className="main-wrapper" style={{ marginTop: "131px" }}>
         <Gallery images={galleryImages} />
       </div>
     </div>
