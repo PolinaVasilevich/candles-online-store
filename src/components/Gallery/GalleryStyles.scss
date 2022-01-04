@@ -1,9 +1,9 @@
 .gallery {
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(6, 172px);
+    grid-template-columns: repeat(6, 15%);
     grid-template-rows: repeat(2, 172px);
-    grid-gap: 2.7rem;
+    grid-gap: 2.3rem;
   }
 
   a {
