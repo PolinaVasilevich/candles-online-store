@@ -1,7 +1,5 @@
 import React, { FC, useState } from "react";
 
-import { IoChevronBack, IoChevronForward } from "react-icons/io5";
-
 import arrow from "../../assets/arrows/smlArrow.png";
 
 const CoutProduct: FC = () => {

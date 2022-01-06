@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
+import { RouteNames } from "../../router";
 import CoutProduct from "../CoutProduct/CoutProduct";
 
 export interface IProduct {
@@ -17,7 +19,10 @@ const ProductSaleCard: FC<ProductSaleCardProps> = (props) => {
 
   return (
     <div className="product-sale">
-      <img src={img} alt={name} />
+      <Link to={`product/${name}`}>
+        <img src={img} alt={name} />
+      </Link>
+
       <div className="product-sale__text-container">
         <h3 className="product-sale__title">{name}</h3>
         <span className="product-sale__color">{color}</span>

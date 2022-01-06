@@ -6,7 +6,7 @@ import MainButton from "../MainButton/MainButton";
 interface ProductInfoCardProps {
   title: string;
   text: string;
-  colorCard: string;
+  colorCard?: string;
   widthBlock?: string;
 }
 

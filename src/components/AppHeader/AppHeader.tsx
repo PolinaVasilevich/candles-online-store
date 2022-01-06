@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { RouteNames } from "../../router";
 import logo from "../../assets/logo.png";
-import bag from "../../assets/icons/bag.png";
 import bagIcon from "../../assets/icons/bag-icons.png";
 
 interface IAppHeaderProps {

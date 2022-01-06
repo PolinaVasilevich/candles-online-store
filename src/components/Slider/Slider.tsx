@@ -2,13 +2,13 @@ import React, { FC, useState } from "react";
 import classnames from "classnames";
 import ProductCard from "../ProductCard/ProductCard";
 
-import arrowBottom from "../../assets/arrows/arrowBottom.png";
 import arrowIcon from "../../assets/arrows/arrow-button-icons.png";
 
 import { IImage } from "../../types/types";
 
 interface SliderProps {
   images: IImage[];
+  isDots?: boolean;
 }
 
 const Slider: FC<SliderProps> = (props) => {
@@ -46,6 +46,15 @@ const Slider: FC<SliderProps> = (props) => {
             colorCard="var(--clr-bgr-header)"
             img={img.img}
           />
+          {props.isDots ? (
+            <div className="slider__dots-container">
+              <div className="slider__dot active-slider"></div>
+              <div className="slider__dot"></div>
+              <div className="slider__dot"></div>
+              <div className="slider__dot"></div>
+              <div className="slider__dot"></div>
+            </div>
+          ) : null}
           <div className="slider__btns">
             <button onClick={prevSlider} disabled={sliderIndex === 1}>
               <div

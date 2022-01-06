@@ -741,6 +741,10 @@ button[disabled] {
     button {
       border: none;
       background: none;
+
+      img:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -841,5 +845,139 @@ button[disabled] {
   .header .nav {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+.slider__dots-container {
+  position: absolute;
+  z-index: 1;
+
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .slider__dot {
+    margin-bottom: 20px;
+
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--clr-white);
+
+    cursor: pointer;
+  }
+
+  .active-slider {
+    background-color: var(--clr-white);
+  }
+}
+
+.slider-wrapper {
+  display: flex;
+  .slider {
+    flex: 1;
+  }
+}
+
+.collections {
+  padding: 0 17rem;
+  .products-list {
+    margin-top: 100px;
+    .products__item {
+      width: 25%;
+    }
+  }
+}
+
+.catalogue {
+  display: flex;
+  padding: 0 9rem;
+
+  .filters {
+    width: 20%;
+  }
+
+  .products-list {
+    width: 80%;
+  }
+
+  .filters__box {
+    .filter {
+      margin-top: 40px;
+      display: flex;
+      &__name {
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: capitalize;
+      }
+      &__checkbox {
+        margin-right: 1.2rem;
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--clr-bgr-grey);
+
+        cursor: pointer;
+      }
+
+      .active-checkbox {
+        background: var(--clr-bgr-grey);
+      }
+    }
+  }
+}
+
+.products-list {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+  }
+
+  &__btns {
+    button {
+      background: none;
+      border: none;
+    }
+  }
+
+  .products {
+    &__item {
+      width: 33.3%;
+    }
+  }
+
+  &__btns {
+    margin-top: 115px;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    .products-list__dots-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: space-between;
+      &__item {
+        margin-left: 2rem;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--clr-orange);
+
+        cursor: pointer;
+      }
+
+      .active-page {
+        background: var(--clr-orange);
+      }
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
   }
 }

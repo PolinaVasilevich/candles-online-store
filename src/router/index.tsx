@@ -2,6 +2,7 @@ import React from "react";
 
 import { Home, About, Catalogue, Collections, Contacts } from "../pages";
 import Bag from "../pages/Bag";
+import Product from "../pages/Product";
 export interface IRoute {
   path: string;
   element: JSX.Element;
@@ -14,6 +15,7 @@ export enum RouteNames {
   COLLECTIONS = "/collections",
   CONTACTS = "/contacts",
   BAG = "/bag",
+  PRODUCT = "/product/:id",
 }
 
 export const routes: IRoute[] = [
@@ -45,5 +47,10 @@ export const routes: IRoute[] = [
   {
     path: RouteNames.BAG,
     element: <Bag />,
+  },
+
+  {
+    path: RouteNames.PRODUCT,
+    element: <Product />,
   },
 ];
